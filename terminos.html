@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos y condiciones — MCI</title>
+<meta name="description" content="Términos y condiciones de Marketing Conversacional Inteligente Limitada (MCI), agricolamci.cl.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tierra:#22261F;
+  --tierra-70:rgba(34,38,31,.7);
+  --tierra-45:rgba(34,38,31,.45);
+  --paja:#E8E2D0;
+  --paja-alt:#DFD7C1;
+  --verde:#37634A;
+  --agua:#2C5A6B;
+  --trigo:#C89A3C;
+  --linea:rgba(34,38,31,.16);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Karla",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+  --max:1180px;
+  --prose:74ch;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paja);
+  color:var(--tierra);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(232,226,208,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linea);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:inherit}
+.logo b{font-family:var(--display);font-weight:800;font-size:25px;letter-spacing:-.02em}
+.logo span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tierra-45)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{
+  font-size:14.5px;color:var(--tierra-70);text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--tierra)}
+.btn{
+  display:inline-block;background:var(--verde);color:var(--paja);
+  padding:12px 22px;border-radius:2px;text-decoration:none;
+  font-weight:700;font-size:15px;letter-spacing:.01em;
+  transition:background .2s,transform .2s;
+}
+.btn:hover{background:#2b5039;transform:translateY(-1px)}
+@media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+/* ---------- doc header ---------- */
+.doc-hero{padding:64px 0 30px;border-bottom:1px solid var(--linea)}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--verde);
+  display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--linea);max-width:90px}
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(30px,4.4vw,48px);line-height:1.05;
+  letter-spacing:-.03em;margin-bottom:14px;max-width:26ch;
+}
+.updated{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--tierra-45);text-transform:uppercase}
+
+/* ---------- doc switcher ---------- */
+.doc-switch{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.doc-switch a{
+  border:1px solid var(--linea);border-radius:100px;
+  padding:9px 18px;font-size:14px;text-decoration:none;color:var(--tierra-70);
+  background:rgba(255,255,255,.32);transition:background .2s,color .2s,border-color .2s;
+}
+.doc-switch a:hover{border-color:var(--tierra-45);color:var(--tierra)}
+.doc-switch a.active{background:var(--tierra);color:var(--paja);border-color:var(--tierra)}
+
+/* ---------- article ---------- */
+.doc-body{padding:56px 0 96px}
+article{max-width:var(--prose);font-size:16.5px}
+article h2{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(20px,2.4vw,25px);line-height:1.2;
+  letter-spacing:-.02em;margin:46px 0 14px;
+  display:flex;align-items:baseline;gap:10px;
+}
+article h2:first-child{margin-top:0}
+article h2 .sec-num{font-family:var(--mono);font-size:14px;color:var(--trigo)}
+article p{color:var(--tierra-70);margin-bottom:16px}
+article p strong{color:var(--tierra);font-weight:700}
+article ol{margin:8px 0 18px 0;padding-left:26px;color:var(--tierra-70)}
+article ol li{margin-bottom:10px;padding-left:6px}
+article ol li strong{color:var(--tierra)}
+article a{color:var(--verde);text-decoration:underline;text-decoration-color:var(--linea);text-underline-offset:2px}
+article a:hover{text-decoration-color:var(--verde)}
+article table{
+  width:100%;border-collapse:collapse;margin:18px 0 26px;
+  font-size:14.5px;border:1px solid var(--linea);
+}
+article table th,article table td{
+  border:1px solid var(--linea);padding:12px 14px;text-align:left;vertical-align:top;
+}
+article table tr:first-child{background:var(--tierra);color:var(--paja)}
+article table tr:first-child td{border-color:var(--tierra)}
+article table tr:first-child td strong{color:var(--paja)}
+article table tr:nth-child(even):not(:first-child){background:rgba(255,255,255,.35)}
+article > p:last-of-type,article > p:nth-last-of-type(2){
+  color:var(--tierra-45);font-size:14px;font-style:italic;
+}
+.doc-foot-nav{
+  margin-top:56px;padding-top:26px;border-top:1px solid var(--linea);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  max-width:var(--prose);
+}
+.doc-foot-nav a{
+  font-size:14.5px;color:var(--tierra-70);text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.doc-foot-nav a:hover{color:var(--verde)}
+
+footer{padding:34px 0;border-top:1px solid var(--linea)}
+.foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--tierra-45);text-transform:uppercase}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:var(--tierra-45);text-decoration:none}
+.foot-links a:hover{color:var(--tierra)}
+
+a:focus-visible,.btn:focus-visible{outline:2.5px solid var(--agua);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo"><b>MCI</b><span>Marketing Conversacional Inteligente</span></a>
+    <div class="nav-links">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#rubros">Rubros</a>
+      <a href="index.html#contacto" class="btn">Conversemos</a>
+    </div>
+  </div>
+</nav>
+
+<header class="doc-hero">
+  <div class="wrap">
+    <div class="eyebrow">Documento legal</div>
+    <h1>Términos y condiciones</h1>
+    <span class="updated">Última actualización: 5 de agosto de 2026</span>
+    <div class="doc-switch">
+      <a href="terminos.html" class="active">Términos y condiciones</a>
+      <a href="privacidad.html" class="">Política de privacidad</a>
+      <a href="borrado-datos.html" class="">Protocolo de borrado de datos</a>
+    </div>
+  </div>
+</header>
+
+<div class="doc-body">
+  <div class="wrap">
+    <article>
+
+
+
+
+
+
+
+
+<h2 id="sec-1"><span class="sec-num">1.</span> Identificación del prestador</h2>
+
+
+<p>Los presentes Términos y Condiciones (en adelante, los “Términos”) regulan el acceso y uso de los servicios tecnológicos prestados por <strong>Marketing Conversacional Inteligente Limitada</strong> (en adelante, “MCI”, “nosotros” o “la Empresa”), operadora del sitio web <a href="https://www.agricolamci.cl"><u>agricolamci.cl</u></a>, representada legalmente por Vicente Avilés.</p>
+
+
+<p><strong>Contacto:</strong> contacto@agricolamci.cl</p>
+
+
+<h2 id="sec-2"><span class="sec-num">2.</span> Aceptación de los Términos</h2>
+
+
+<p>Al utilizar, acceder o interactuar con cualquiera de los servicios de MCI, incluyendo la comunicación a través de asistentes virtuales en WhatsApp, el uso del sitio web, la contratación de diagnósticos o la implementación de soluciones tecnológicas, el usuario declara conocer y aceptar íntegramente estos Términos, así como nuestra Política de Privacidad.</p>
+
+
+<p>Si no estás de acuerdo con alguno de estos Términos, te solicitamos no utilizar nuestros servicios.</p>
+
+
+<h2 id="sec-3"><span class="sec-num">3.</span> Descripción de los servicios</h2>
+
+
+<p>MCI es una empresa tecnológica especializada en el diseño, desarrollo e implementación de soluciones de software, automatización de procesos e inteligencia artificial para empresas del sector agropecuario. Nuestros servicios incluyen, entre otros:</p>
+
+
+<ol type="a">
+<li><p><strong>Asistentes virtuales expertos con IA:</strong> diseño e implementación de agentes inteligentes en WhatsApp y otros canales digitales, alimentados con bases de conocimiento propias de la empresa cliente (catálogos de productos, fichas técnicas, manuales de aplicación, especificaciones, protocolos y otra documentación especializada), que operan como consultores técnicos virtuales capaces de resolver consultas sobre productos, recomendar soluciones, entregar información detallada de uso y aplicación, calificar oportunidades comerciales y agendar visitas técnicas.</p></li>
+<li><p><strong>Automatización de procesos:</strong> cotizaciones, órdenes de compra, seguimiento de despachos, registros productivos y gestión de contactos, conectados en flujos de trabajo integrados.</p></li>
+<li><p><strong>Desarrollo a medida:</strong> software para predios, plantas agroindustriales, exportadoras y empresas de insumos o servicios agrícolas, cuando las soluciones estándar no se ajustan a la realidad operativa del cliente.</p></li>
+<li><p><strong>Diagnóstico operativo:</strong> evaluación de procesos actuales del cliente para identificar oportunidades de mejora a través de automatización e inteligencia artificial.</p></li>
+<li><p><strong>Integración de sistemas:</strong> conexión entre plataformas existentes (planillas, ERPs, sistemas de riego, plataformas de gestión) con los sistemas implementados por MCI.</p></li>
+<li><p><strong>Plataforma de gestión de conversaciones:</strong> acceso a un panel de atención donde la empresa cliente y sus agentes zonales pueden monitorear, intervenir y gestionar en tiempo real las conversaciones de sus usuarios finales. Cada agente zonal recibe credenciales individuales con acceso restringido a su territorio o área de responsabilidad, pudiendo visualizar y participar únicamente en las conversaciones que le corresponden.</p></li>
+<li><p><strong>Soporte y acompañamiento:</strong> capacitación del equipo, ajustes durante los primeros meses de operación y actualización continua de las bases de conocimiento que alimentan los agentes.</p></li>
+</ol>
+
+
+<h2 id="sec-4"><span class="sec-num">4.</span> Naturaleza de los servicios y alcance de los agentes inteligentes</h2>
+
+
+<p><strong>MCI presta servicios de naturaleza tecnológica.</strong> Los asistentes virtuales implementados por MCI operan como <strong>consultores técnicos virtuales</strong> que responden consultas sobre productos y servicios de la empresa cliente, utilizando bases de conocimiento alimentadas con la documentación técnica, catálogos, fichas de producto, manuales de aplicación y otros antecedentes proporcionados por dicha empresa.</p>
+
+
+<p>Estos agentes están diseñados para entregar información técnica precisa sobre los productos y servicios de la empresa cliente —como dosis de aplicación, compatibilidades, métodos de uso, recomendaciones de riego, especificaciones de maquinaria o condiciones de almacenamiento—, respondiendo de forma similar a como lo haría un especialista de la empresa. No obstante, el usuario debe tener presente que:</p>
+
+
+<ol type="a">
+<li><p><strong>Las respuestas se generan a partir de la documentación cargada por la empresa cliente.</strong> La calidad y exactitud de la información depende directamente de la completitud, precisión y vigencia de los documentos proporcionados como fuente de conocimiento. MCI no genera ni valida la información técnica de los productos; la responsabilidad sobre su veracidad corresponde a la empresa cliente.</p></li>
+<li><p><strong>Los agentes pueden cometer errores.</strong> Aunque los sistemas utilizan tecnología de recuperación aumentada (RAG) para fundamentar sus respuestas en documentación real, los modelos de IA pueden interpretar, resumir o contextualizar la información de manera inexacta en casos específicos.</p></li>
+<li><p><strong>Las recomendaciones no reemplazan la asesoría profesional presencial.</strong> Para decisiones críticas —como aplicaciones fitosanitarias, formulaciones de ración animal, manejos sanitarios, evaluaciones de suelo o inversiones en infraestructura—, el usuario debe consultar con un profesional del área (agrónomo, veterinario, ingeniero) que pueda evaluar las condiciones particulares de su predio u operación.</p></li>
+<li><p><strong>La relación comercial es con la empresa cliente, no con MCI.</strong> Cuando un usuario final interactúa con un agente implementado para una empresa agropecuaria, está interactuando con el canal de atención de esa empresa. MCI es el desarrollador y operador tecnológico del sistema, no el proveedor del producto o servicio consultado.</p></li>
+</ol>
+
+
+<h2 id="sec-5"><span class="sec-num">5.</span> Bases de conocimiento y responsabilidad sobre el contenido</h2>
+
+
+<p>Los agentes inteligentes de MCI operan con un modelo de <strong>recuperación aumentada de generación (RAG)</strong>, lo que significa que sus respuestas se fundamentan en documentos específicos proporcionados por la empresa cliente, como catálogos de productos, fichas técnicas, manuales, protocolos de aplicación, precios y condiciones comerciales.</p>
+
+
+<p>La empresa cliente es responsable de proporcionar documentación completa, precisa y actualizada para alimentar la base de conocimiento de su agente. MCI facilita la carga, estructuración y optimización de estos documentos para su procesamiento por IA, pero no produce ni valida el contenido técnico o comercial de los productos de la empresa cliente.</p>
+
+
+<p>Si un agente entrega información incorrecta porque la documentación fuente contiene errores, está desactualizada o es incompleta, la responsabilidad recae en la empresa cliente que proporcionó dicha documentación.</p>
+
+
+<p>MCI se compromete a implementar las mejores prácticas disponibles para que el agente cite con fidelidad la información de la base de conocimiento y evite fabricar respuestas sin respaldo documental (alucinaciones). No obstante, ningún sistema de IA está exento de error, y MCI no garantiza la infalibilidad de las respuestas.</p>
+
+
+<h2 id="sec-6"><span class="sec-num">6.</span> Uso de WhatsApp Business Platform</h2>
+
+
+<p>Los servicios de comunicación de MCI se prestan principalmente a través de la API oficial de WhatsApp Business, provista por Meta Platforms, Inc. Al interactuar con los agentes o números de WhatsApp Business operados por MCI, el usuario también se encuentra sujeto a los términos de servicio y política de privacidad de WhatsApp y Meta, disponibles en <a href="https://www.whatsapp.com/legal/terms-of-service"><u>https://www.whatsapp.com/legal/terms-of-service</u></a>.</p>
+
+
+<p>El usuario comprende que los mensajes enviados por WhatsApp transitan por la infraestructura de Meta y de los proveedores de soluciones de mensajería (BSPs) que MCI utilice en cada momento.</p>
+
+
+<h2 id="sec-7"><span class="sec-num">7.</span> Acceso a la plataforma de gestión de conversaciones</h2>
+
+
+<p>Como parte de los servicios contratados, MCI proporciona a la empresa cliente acceso a una <strong>plataforma de gestión de conversaciones</strong> (panel de atención) que permite supervisar, intervenir y gestionar las interacciones de los usuarios finales con los agentes inteligentes. Esta plataforma constituye una herramienta operativa entregada en licencia de uso conforme al contrato de servicios.</p>
+
+
+<p>La empresa cliente puede solicitar la creación de <strong>cuentas individuales para sus agentes zonales, ejecutivos o personal autorizado</strong>. Cada cuenta se configura con credenciales propias (usuario y contraseña) y con acceso restringido al área geográfica, línea de negocio o conjunto de conversaciones que corresponda a dicho agente, de modo que cada usuario solo pueda visualizar y participar en las conversaciones asignadas a su zona o responsabilidad.</p>
+
+
+<p>Respecto de las cuentas de acceso a la plataforma, se aplican las siguientes condiciones:</p>
+
+
+<ol type="a">
+<li><p><strong>Cuentas intransferibles:</strong> cada cuenta es personal e intransferible. El agente zonal o usuario autorizado no debe compartir sus credenciales con terceros ni con otros miembros de la organización que no estén autorizados para acceder a esas conversaciones.</p></li>
+<li><p><strong>Responsabilidad sobre las credenciales:</strong> la empresa cliente y cada usuario autorizado son responsables de mantener la confidencialidad de sus credenciales. Toda actividad realizada con una cuenta se presume ejecutada por su titular. En caso de pérdida, robo o sospecha de uso no autorizado de una cuenta, la empresa cliente debe notificarlo de inmediato a MCI para proceder al bloqueo y restablecimiento de credenciales.</p></li>
+<li><p><strong>Gestión de altas y bajas:</strong> la empresa cliente debe solicitar a MCI la creación de nuevas cuentas cuando incorpore personal y la desactivación de cuentas cuando un agente zonal deje de prestar funciones, cambie de zona o se desvincule de la empresa, a fin de evitar accesos no autorizados.</p></li>
+<li><p><strong>Uso exclusivamente profesional:</strong> el acceso a la plataforma debe utilizarse exclusivamente para la gestión de las conversaciones y la atención de usuarios finales en el contexto de la actividad comercial de la empresa cliente. Queda prohibido el uso de la plataforma para fines personales, la extracción masiva de datos o cualquier actividad ajena al servicio contratado.</p></li>
+<li><p><strong>Privacidad de las conversaciones:</strong> los agentes zonales que accedan a las conversaciones de usuarios finales deben respetar la confidencialidad de la información contenida en ellas y tratarla conforme a la Política de Privacidad aplicable. La empresa cliente es responsable de instruir a su personal sobre estas obligaciones.</p></li>
+</ol>
+
+
+<p>MCI no será responsable por daños derivados del uso indebido de las credenciales, del acceso no autorizado a la plataforma por parte de terceros a causa de negligencia del cliente, o del incumplimiento de las obligaciones de gestión de cuentas descritas en esta sección.</p>
+
+
+<h2 id="sec-8"><span class="sec-num">8.</span> Obligaciones del usuario</h2>
+
+
+<p>Al utilizar los servicios de MCI o interactuar con agentes implementados para empresas clientes, el usuario se compromete a:</p>
+
+
+<ol start="6" type="a">
+<li><p>Proporcionar información veraz, completa y actualizada cuando le sea requerida.</p></li>
+<li><p>Utilizar los servicios únicamente para fines lícitos y conforme a la legislación chilena vigente.</p></li>
+<li><p>No enviar contenido ilícito, ofensivo, difamatorio o que infrinja derechos de terceros a través de los canales de comunicación habilitados.</p></li>
+<li><p>No intentar acceder de forma no autorizada a los sistemas, bases de conocimiento, flujos de automatización o infraestructura tecnológica de MCI ni de las empresas clientes.</p></li>
+<li><p>No utilizar los agentes inteligentes de forma abusiva, automatizada (bots sobre bots) o con fines de ingeniería inversa, extracción masiva de datos o replicación de las bases de conocimiento.</p></li>
+<li><p>Verificar de forma independiente la información crítica proporcionada por los agentes antes de tomar decisiones productivas, sanitarias o de inversión que puedan tener consecuencias significativas.</p></li>
+<li><p>Abstenerse de enviar datos especialmente sensibles por canales de atención automatizada, salvo que sea estrictamente necesario y exista un mecanismo seguro habilitado.</p></li>
+</ol>
+
+
+<h2 id="sec-9"><span class="sec-num">9.</span> Obligaciones de la empresa cliente</h2>
+
+
+<p>Cuando MCI implementa soluciones para una empresa agropecuaria, esta empresa cliente se compromete además a:</p>
+
+
+<ol type="a">
+<li><p>Proporcionar documentación técnica y comercial completa, precisa y vigente para alimentar la base de conocimiento de su agente (fichas de producto, catálogos, manuales, protocolos, precios, condiciones de venta).</p></li>
+<li><p>Notificar oportunamente a MCI cualquier cambio en productos, precios, especificaciones técnicas, condiciones de venta o cualquier información que afecte la vigencia de la base de conocimiento, para que el agente sea actualizado y no entregue información obsoleta.</p></li>
+<li><p>Asumir la responsabilidad sobre la veracidad y exactitud de la información técnica y comercial de sus productos y servicios que se cargue en la base de conocimiento.</p></li>
+<li><p>Informar a sus clientes, proveedores y trabajadores que interactúan con los agentes sobre el uso de inteligencia artificial y el tratamiento de datos personales.</p></li>
+<li><p>Garantizar que cuenta con el consentimiento o la base legal necesaria para compartir con MCI datos de terceros que se procesen a través de los sistemas implementados.</p></li>
+<li><p>Designar al menos una persona de contacto que actúe como enlace operativo con MCI durante la implementación y el período de soporte.</p></li>
+<li><p>Utilizar los sistemas implementados conforme a su finalidad y no modificar ni intervenir los flujos de automatización ni las bases de conocimiento sin coordinación previa con MCI.</p></li>
+<li><p>Gestionar las cuentas de acceso a la plataforma de gestión de conversaciones conforme a lo establecido en la sección 7, incluyendo la solicitud oportuna de altas y bajas de usuarios, y la instrucción a su personal sobre el uso adecuado de credenciales y la confidencialidad de las conversaciones.</p></li>
+<li><p>Responder frente a MCI y frente a los usuarios finales por cualquier daño derivado del acceso indebido a conversaciones o datos a través de cuentas que no hayan sido oportunamente desactivadas o cuyas credenciales hayan sido compartidas por negligencia del cliente.</p></li>
+</ol>
+
+
+<h2 id="sec-10"><span class="sec-num">10.</span> Confidencialidad de la información</h2>
+
+
+<p>MCI se compromete a tratar como <strong>confidencial</strong> toda la información operativa, comercial, productiva y técnica proporcionada por la empresa cliente, incluyendo catálogos de productos, fichas técnicas, formulaciones, precios, listas de clientes y proveedores, volúmenes de producción, estrategias comerciales y cualquier documento cargado en las bases de conocimiento.</p>
+
+
+<p>Las bases de conocimiento de cada empresa cliente se mantienen <strong>estrictamente separadas</strong>. La información cargada para un cliente no es accesible por los agentes de otro cliente, ni se utiliza para entrenar modelos de IA ni para beneficio de MCI o de terceros.</p>
+
+
+<p>La obligación de confidencialidad se mantiene vigente durante la relación contractual y por un período de 3 años tras su término, salvo acuerdo distinto en el contrato específico.</p>
+
+
+<h2 id="sec-11"><span class="sec-num">11.</span> Propiedad intelectual</h2>
+
+
+<p>Todo el software, código fuente, diseños, flujos de automatización, prompts, arquitectura de agentes, modelos de datos, interfaces, marcas, logotipos y demás contenido desarrollado por MCI constituyen propiedad intelectual de la Empresa o de sus licenciantes, según corresponda.</p>
+
+
+<p>La contratación de servicios otorga únicamente una licencia de uso limitada, no exclusiva y revocable sobre los sistemas implementados. El cliente no adquiere derechos de propiedad sobre el código fuente, los flujos de automatización, la arquitectura de los agentes ni los prompts de IA por el hecho de utilizarlos.</p>
+
+
+<p>Los datos, documentación técnica, catálogos de productos, registros productivos, listas de contactos y demás contenido proporcionado por la empresa cliente para alimentar las bases de conocimiento permanecen bajo su titularidad. MCI no adquiere derechos sobre dichos contenidos más allá de los necesarios para la prestación del servicio.</p>
+
+
+<h2 id="sec-12"><span class="sec-num">12.</span> Limitación de responsabilidad</h2>
+
+
+<p>MCI no será responsable por:</p>
+
+
+<ol type="a">
+<li><p>Daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso de los servicios, incluyendo pérdida de datos, lucro cesante, pérdida de cosechas, deterioro de productos, muerte de animales o interrupción de operaciones.</p></li>
+<li><p>Errores, inexactitudes u omisiones en las respuestas generadas por los agentes inteligentes, incluyendo recomendaciones técnicas sobre productos, dosis, aplicaciones, compatibilidades o cualquier otra información extraída de las bases de conocimiento.</p></li>
+<li><p>Daños derivados de que la empresa cliente haya proporcionado documentación técnica incorrecta, desactualizada o incompleta para alimentar la base de conocimiento del agente.</p></li>
+<li><p>Decisiones productivas, sanitarias, comerciales o de inversión adoptadas por el usuario con base en información proporcionada por los agentes inteligentes sin verificación independiente por un profesional del área.</p></li>
+<li><p>Interrupciones, caídas o fallas en los servicios de terceros (Meta, WhatsApp, proveedores de IA, servicios en la nube, operadores de telecomunicaciones) que afecten la disponibilidad de los sistemas.</p></li>
+<li><p>Pérdida de conectividad en zonas rurales, fallas en la red eléctrica u otras limitaciones de infraestructura del entorno agropecuario.</p></li>
+<li><p>Hechos de fuerza mayor o caso fortuito, incluyendo desastres naturales, eventos climáticos extremos, plagas, pandemias u otras circunstancias ajenas al control de MCI.</p></li>
+</ol>
+
+
+<p>En ningún caso la responsabilidad total de MCI frente al cliente excederá el monto efectivamente pagado por el cliente en los últimos doce (12) meses por el servicio específico que originó el reclamo, o el equivalente a 10 UF, lo que sea menor.</p>
+
+
+<h2 id="sec-13"><span class="sec-num">13.</span> Disponibilidad del servicio</h2>
+
+
+<p>MCI realizará esfuerzos razonables para mantener la disponibilidad de los sistemas implementados. El usuario reconoce que los servicios pueden experimentar interrupciones temporales por mantenimiento, actualizaciones, recarga de bases de conocimiento, fallas técnicas o causas ajenas a MCI.</p>
+
+
+<p>MCI se reserva el derecho de modificar, suspender o descontinuar funcionalidades, previa notificación razonable cuando sea posible.</p>
+
+
+<h2 id="sec-14"><span class="sec-num">14.</span> Contratación de servicios</h2>
+
+
+<p>La contratación de servicios de diagnóstico, diseño, desarrollo e implementación se regirá por las condiciones acordadas en cada propuesta comercial, cotización o contrato particular. Cada propuesta define el alcance, los entregables, los plazos y el costo.</p>
+
+
+<p>En caso de contradicción entre estos Términos generales y un contrato específico, prevalecerán las condiciones del contrato específico.</p>
+
+
+<h2 id="sec-15"><span class="sec-num">15.</span> Comunicaciones comerciales</h2>
+
+
+<p>MCI podrá enviar comunicaciones informativas o comerciales por WhatsApp u otros medios digitales únicamente con consentimiento previo del usuario. El usuario puede revocar dicho consentimiento respondiendo “BAJA” o “STOP”, o escribiendo a contacto@agricolamci.cl.</p>
+
+
+<h2 id="sec-16"><span class="sec-num">16.</span> Privacidad y protección de datos</h2>
+
+
+<p>El tratamiento de datos personales se rige por nuestra Política de Privacidad, que forma parte integrante de estos Términos. MCI trata los datos conforme a la Ley N° 19.628 sobre Protección de la Vida Privada. Los derechos de acceso, rectificación, cancelación y oposición pueden ejercerse escribiendo a contacto@agricolamci.cl.</p>
+
+
+<h2 id="sec-17"><span class="sec-num">17.</span> Suspensión y terminación</h2>
+
+
+<p>MCI se reserva el derecho de suspender o cancelar el acceso a los servicios, sin necesidad de previo aviso, cuando:</p>
+
+
+<ol type="a">
+<li><p>El usuario incumpla estos Términos o la legislación vigente.</p></li>
+<li><p>Se detecte uso abusivo, fraudulento o malintencionado, incluyendo intentos de extracción masiva de información de las bases de conocimiento.</p></li>
+<li><p>Se detecte que credenciales de acceso a la plataforma de gestión han sido compartidas con personas no autorizadas, o que cuentas de agentes zonales desvinculados no han sido reportadas para su desactivación.</p></li>
+<li><p>Sea necesario para proteger la seguridad, integridad o disponibilidad de los sistemas o de los datos de otros clientes.</p></li>
+<li><p>Lo requiera una orden judicial o administrativa.</p></li>
+</ol>
+
+
+<h2 id="sec-18"><span class="sec-num">18.</span> Modificaciones a estos Términos</h2>
+
+
+<p>MCI podrá modificar estos Términos en cualquier momento. La versión vigente será publicada con la fecha de última actualización. El uso continuado implica aceptación. Para cambios sustanciales, MCI notificará previamente a los clientes afectados.</p>
+
+
+<h2 id="sec-19"><span class="sec-num">19.</span> Ley aplicable y jurisdicción</h2>
+
+
+<p>Estos Términos se rigen por las leyes de la República de Chile. Cualquier controversia será sometida a los tribunales ordinarios de Santiago de Chile, renunciando las partes a cualquier otro fuero.</p>
+
+
+<h2 id="sec-20"><span class="sec-num">20.</span> Indemnidad</h2>
+
+
+<p>El usuario se obliga a mantener indemne a MCI, sus socios, directores, empleados y representantes, frente a cualquier reclamo, demanda, daño, pérdida, costo o gasto (incluidos honorarios de abogados) que surja del uso indebido de los servicios, del incumplimiento de estos Términos, de la entrega de documentación técnica incorrecta para las bases de conocimiento, o de la vulneración de derechos de terceros.</p>
+
+
+<h2 id="sec-21"><span class="sec-num">21.</span> Divisibilidad</h2>
+
+
+<p>Si alguna cláusula fuese declarada nula, inválida o inaplicable, dicha nulidad no afectará la validez de las restantes cláusulas.</p>
+
+
+<h2 id="sec-22"><span class="sec-num">22.</span> Contacto</h2>
+
+
+<p>Para cualquier consulta sobre estos Términos, escríbenos a contacto@agricolamci.cl.</p>
+
+
+<p><em>Marketing Conversacional Inteligente Limitada — agricolamci.cl</em></p>
+
+
+<p><em>Representante Legal: Vicente Avilés | contacto@agricolamci.cl</em></p>
+
+
+    </article>
+    <div class="doc-foot-nav">
+      <a href="index.html">← Volver al inicio</a>
+      <a href="mailto:contacto@agricolamci.cl">contacto@agricolamci.cl</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>Marketing Conversacional Inteligente Limitada</span>
+    <div class="foot-links">
+      <a href="terminos.html">Términos</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="borrado-datos.html">Borrado de datos</a>
+    </div>
+    <span>Chile · agricolamci.cl</span>
+  </div>
+</footer>
+
+</body>
+</html>

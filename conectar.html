@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conectar WhatsApp — MCI</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tierra:#22261F;
+  --tierra-70:rgba(34,38,31,.7);
+  --tierra-45:rgba(34,38,31,.45);
+  --paja:#E8E2D0;
+  --paja-alt:#DFD7C1;
+  --verde:#37634A;
+  --agua:#2C5A6B;
+  --trigo:#C89A3C;
+  --ladrillo:#8C3A2B;
+  --linea:rgba(34,38,31,.16);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Karla",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paja);
+  color:var(--tierra);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.angosto{max-width:720px;margin:0 auto;padding:0 28px}
+
+/* ---------- nav ---------- */
+.nav{background:rgba(232,226,208,.88);border-bottom:1px solid var(--linea)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:inherit}
+.logo b{font-family:var(--display);font-weight:800;font-size:25px;letter-spacing:-.02em}
+.logo span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tierra-45)}
+.nav-in > span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tierra-45)}
+@media(max-width:640px){.logo span{display:none}}
+
+/* ---------- base tipográfica ---------- */
+main{padding:70px 0 96px}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--verde);
+  display:flex;align-items:center;gap:12px;margin-bottom:24px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--linea);max-width:90px}
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(34px,5vw,54px);line-height:1.04;
+  letter-spacing:-.035em;margin-bottom:22px;
+}
+h1 em{font-style:normal;color:var(--verde)}
+.lede{font-size:19px;color:var(--tierra-70);max-width:50ch;margin-bottom:38px}
+
+.btn{
+  display:inline-block;background:var(--verde);color:var(--paja);
+  padding:14px 26px;border-radius:2px;text-decoration:none;border:0;
+  font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:.01em;
+  cursor:pointer;transition:background .2s,transform .2s;
+}
+.btn:hover:not(:disabled){background:#2b5039;transform:translateY(-1px)}
+.btn:disabled{opacity:.45;cursor:progress;transform:none}
+.btn-line{background:transparent;color:var(--tierra);border:1.5px solid var(--tierra)}
+.btn-line:hover:not(:disabled){background:var(--tierra);color:var(--paja)}
+.btn:focus-visible,input:focus-visible,a:focus-visible{outline:2.5px solid var(--agua);outline-offset:3px}
+
+/* ---------- campo de clave ---------- */
+.clave-form{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px}
+.clave-campo{flex:1;min-width:240px}
+label{
+  display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tierra-45);margin-bottom:9px;
+}
+input[type=text]{
+  width:100%;background:#FBF8F0;border:1.5px solid var(--linea);border-radius:2px;
+  padding:14px 16px;font-family:var(--mono);font-size:17px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tierra);
+}
+input[type=text]::placeholder{color:var(--tierra-45);letter-spacing:.12em}
+input[type=text]:focus{border-color:var(--verde);outline:none}
+.clave-form .btn{margin-top:29px}
+@media(max-width:520px){.clave-form .btn{margin-top:0;width:100%}}
+
+/* ---------- registro de conexión (signature) ---------- */
+.registro{
+  background:#FBF8F0;border:1px solid var(--linea);border-radius:4px;
+  box-shadow:0 26px 60px -30px rgba(34,38,31,.42);
+  overflow:hidden;margin-bottom:34px;
+}
+.registro-top{
+  display:flex;align-items:center;gap:11px;
+  padding:14px 20px;border-bottom:1px solid var(--linea);background:var(--paja-alt);
+}
+.registro-top strong{font-size:14px;font-weight:700}
+.registro-top span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--tierra-45);margin-left:auto;text-transform:uppercase}
+.asiento{
+  display:grid;grid-template-columns:34px 1fr;gap:16px;
+  padding:20px;border-bottom:1px solid var(--linea);transition:background .3s ease;
+}
+.asiento:last-child{border-bottom:0}
+.asiento[data-estado="activo"]{background:rgba(200,154,60,.07)}
+.asiento[data-estado="listo"] .num{background:var(--verde);border-color:var(--verde);color:var(--paja)}
+.asiento[data-estado="falla"] .num{background:var(--ladrillo);border-color:var(--ladrillo);color:var(--paja)}
+.num{
+  width:34px;height:34px;border:1.5px solid var(--linea);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;font-weight:700;color:var(--tierra-45);
+  transition:all .3s ease;
+}
+.asiento h3{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.015em;margin:5px 0 5px}
+.asiento p{font-size:15.5px;color:var(--tierra-70)}
+
+/* ---------- avisos ---------- */
+.aviso{border-left:3px solid var(--ladrillo);background:rgba(140,58,43,.06);padding:18px 22px;margin-bottom:28px}
+.aviso.ok{border-left-color:var(--trigo);background:rgba(200,154,60,.1)}
+.aviso h2{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.015em;margin-bottom:6px;color:var(--ladrillo)}
+.aviso.ok h2{color:var(--tierra)}
+.aviso p{font-size:15.5px;color:var(--tierra-70)}
+.nota{font-size:15px;color:var(--tierra-70);max-width:52ch;margin-top:20px}
+.nota a{color:var(--verde)}
+
+footer{padding:34px 0;border-top:1px solid var(--linea);margin-top:40px}
+.foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--tierra-45);text-transform:uppercase}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:var(--tierra-45);text-decoration:none}
+.foot-links a:hover{color:var(--tierra)}
+
+[hidden]{display:none !important}
+@media(prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo"><b>MCI</b><span>Marketing Conversacional Inteligente</span></a>
+    <span>Conexión de WhatsApp</span>
+  </div>
+</nav>
+
+<main class="angosto">
+
+  <!-- A. Validando la clave que venía en el link -->
+  <section id="v-cargando">
+    <p class="lede">Verificando la clave…</p>
+  </section>
+
+  <!-- B. Pedir la clave -->
+  <section id="v-clave" hidden>
+    <div class="eyebrow">Acceso</div>
+    <h1>Ingrese la clave que <em>le entregamos</em>.</h1>
+    <p class="lede">Está en el correo o el mensaje de WhatsApp que le enviamos junto con el enlace de esta página.</p>
+    <div class="clave-form">
+      <div class="clave-campo">
+        <label for="clave">Clave de conexión</label>
+        <input type="text" id="clave" inputmode="latin" autocomplete="off" spellcheck="false"
+               placeholder="A7K2-M4XP" maxlength="24">
+      </div>
+      <button class="btn" id="btn-clave" type="button">Continuar</button>
+    </div>
+    <p class="nota" id="clave-error" hidden style="color:var(--ladrillo)"></p>
+    <p class="nota">¿No tiene clave? Escríbanos a <a href="mailto:contacto@agricolamci.cl">contacto@agricolamci.cl</a>.</p>
+  </section>
+
+  <!-- C. Clave válida, listo para conectar -->
+  <section id="v-listo" hidden>
+    <div class="eyebrow">Conexión de WhatsApp</div>
+    <h1>Conecte el WhatsApp de <em id="nombre-cliente">su empresa</em>.</h1>
+    <p class="lede">
+      Meta va a abrir una ventana para confirmar los datos de su empresa y verificar el número.
+      Toma unos cinco minutos y necesita el teléfono a mano.
+    </p>
+
+    <div class="registro">
+      <div class="registro-top">
+        <strong id="cliente-cab">—</strong>
+        <span>Registro de conexión</span>
+      </div>
+      <div class="asiento" data-paso="1" data-estado="activo">
+        <div class="num">01</div>
+        <div>
+          <h3>Confirmar la empresa</h3>
+          <p>Inicie sesión con Facebook y revise los datos que ya dejamos cargados por usted.</p>
+        </div>
+      </div>
+      <div class="asiento" data-paso="2">
+        <div class="num">02</div>
+        <div>
+          <h3>Verificar el número</h3>
+          <p>Debe ser un número que hoy no esté en uso en la aplicación WhatsApp Business.</p>
+        </div>
+      </div>
+      <div class="asiento" data-paso="3">
+        <div class="num">03</div>
+        <div>
+          <h3>Dejarlo operativo</h3>
+          <p>Registramos el número y lo conectamos con su asistente.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" id="btn-conectar" type="button">Conectar WhatsApp</button>
+    <p class="nota">
+      La cuenta queda a nombre de su empresa. Usted mantiene la propiedad del número
+      y puede revocar el acceso de MCI cuando quiera.
+    </p>
+  </section>
+
+  <!-- D. Terminado -->
+  <section id="v-final" hidden>
+    <div class="eyebrow">Conexión completada</div>
+    <h1>Su número quedó <em>conectado</em>.</h1>
+    <p class="lede">Estamos dejando la cuenta operativa. Le avisamos por WhatsApp apenas esté lista.</p>
+    <div class="aviso ok">
+      <h2>Falta un paso suyo</h2>
+      <p>Para poder enviar mensajes, su cuenta necesita un medio de pago cargado en el Administrador de WhatsApp. Le enviamos las instrucciones por correo.</p>
+    </div>
+    <p class="nota">Puede cerrar esta página.</p>
+  </section>
+
+  <!-- E. Cortado a mitad de camino -->
+  <section id="v-corte" hidden>
+    <div class="eyebrow">Conexión incompleta</div>
+    <h1>La conexión <em>quedó a medio camino</em>.</h1>
+    <p class="lede" id="corte-detalle">Puede reintentarlo con la misma clave.</p>
+    <button class="btn" id="btn-reintentar" type="button">Reintentar</button>
+  </section>
+
+  <!-- F. Clave inválida, vencida o ya usada -->
+  <section id="v-invalido" hidden>
+    <div class="aviso">
+      <h2 id="invalido-titulo">Esta clave no está disponible</h2>
+      <p id="invalido-detalle">Pida una nueva al equipo de MCI y vuelva a intentarlo.</p>
+    </div>
+    <p class="nota">Escríbanos a <a href="mailto:contacto@agricolamci.cl">contacto@agricolamci.cl</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>Marketing Conversacional Inteligente Limitada</span>
+    <div class="foot-links">
+      <a href="/terminos.html">Términos y condiciones</a>
+      <a href="/privacidad.html">Política de privacidad</a>
+      <a href="/borrado-datos.html">Protocolo de borrado de datos</a>
+    </div>
+    <span>Chile · agricolamci.cl</span>
+  </div>
+</footer>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var clave = (new URLSearchParams(location.search).get("t") || "").trim();
+  var cfg = null;      // { appId, configId, graphVersion, cliente, setup }
+  var sesion = null;   // asset IDs del message event
+  var code = null;     // code canjeable — vence en 30 s
+  var enviado = false;
+
+  var vistas = ["v-cargando","v-clave","v-listo","v-final","v-corte","v-invalido"];
+  function mostrar(id) {
+    vistas.forEach(function (v) { document.getElementById(v).hidden = (v !== id); });
+  }
+  function marcarPaso(n, estado) {
+    var el = document.querySelector('[data-paso="' + n + '"]');
+    if (el) el.setAttribute("data-estado", estado);
+  }
+
+  // ---- 1. Validar la clave contra el servidor -------------------------------
+  function validar(valor, desdeCampo) {
+    return fetch("/api/prefill?t=" + encodeURIComponent(valor))
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        if (!res.ok) {
+          if (desdeCampo) {
+            var e = document.getElementById("clave-error");
+            e.textContent = res.body.detalle || "La clave no es válida.";
+            e.hidden = false;
+            mostrar("v-clave");
+            document.getElementById("btn-clave").disabled = false;
+          } else {
+            document.getElementById("invalido-titulo").textContent = res.body.titulo || "Esta clave no está disponible";
+            document.getElementById("invalido-detalle").textContent = res.body.detalle || "Pida una nueva al equipo de MCI.";
+            mostrar("v-invalido");
+          }
+          return;
+        }
+        clave = valor;
+        cfg = res.body;
+        document.getElementById("nombre-cliente").textContent = cfg.cliente;
+        document.getElementById("cliente-cab").textContent = cfg.cliente;
+        mostrar("v-listo");
+        iniciarSdk();
+      })
+      .catch(function () {
+        document.getElementById("invalido-titulo").textContent = "No pudimos verificar la clave";
+        document.getElementById("invalido-detalle").textContent = "Revise su conexión a internet y recargue la página.";
+        mostrar("v-invalido");
+      });
+  }
+
+  if (clave) {
+    validar(clave, false);
+  } else {
+    mostrar("v-clave");
+  }
+
+  document.getElementById("btn-clave").addEventListener("click", function () {
+    var valor = document.getElementById("clave").value.trim().toUpperCase();
+    if (!valor) return;
+    document.getElementById("clave-error").hidden = true;
+    this.disabled = true;
+    validar(valor, true);
+  });
+  document.getElementById("clave").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") document.getElementById("btn-clave").click();
+  });
+
+  // ---- 2. Inicializar el SDK con la config que entregó el servidor ----------
+  function iniciarSdk() {
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: cfg.appId,
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: cfg.graphVersion
+      });
+    };
+    if (window.FB) window.fbAsyncInit();
+  }
+
+  // ---- 3. Eventos de sesión del flujo --------------------------------------
+  window.addEventListener("message", function (event) {
+    if (typeof event.origin !== "string" || !event.origin.endsWith("facebook.com")) return;
+    var data;
+    try { data = JSON.parse(event.data); } catch (e) { return; }
+    if (!data || data.type !== "WA_EMBEDDED_SIGNUP") return;
+
+    if (String(data.event).indexOf("FINISH") === 0) {
+      sesion = data.data || {};
+      marcarPaso(1, "listo");
+      marcarPaso(2, "listo");
+      enviar();
+    } else if (data.event === "CANCEL") {
+      cortar(data.data || {});
+    }
+  });
+
+  // ---- 4. Callback con el code ---------------------------------------------
+  function alResponder(response) {
+    if (response && response.authResponse && response.authResponse.code) {
+      code = response.authResponse.code;
+      enviar();
+    } else {
+      cortar({ current_step: "LOGIN" });
+    }
+  }
+
+  // ---- 5. Lanzar Embedded Signup -------------------------------------------
+  function lanzar() {
+    if (!cfg || !window.FB) return;
+    var b = document.getElementById("btn-conectar");
+    b.disabled = true;
+    window.FB.login(alResponder, {
+      config_id: cfg.configId,
+      response_type: "code",
+      override_default_response_type: true,
+      extras: { setup: cfg.setup || {} }
+    });
+    setTimeout(function () { b.disabled = false; }, 4000);
+  }
+  document.getElementById("btn-conectar").addEventListener("click", lanzar);
+  document.getElementById("btn-reintentar").addEventListener("click", function () {
+    mostrar("v-listo"); lanzar();
+  });
+
+  // ---- 6. Mandar al backend antes de que venza el code ---------------------
+  function enviar() {
+    if (enviado || !code || !sesion) return;
+    enviado = true;
+    marcarPaso(3, "activo");
+
+    fetch("/api/onboarding", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        t: clave,
+        evento: "FINISH",
+        code: code,
+        waba_id: sesion.waba_id || null,
+        phone_number_id: sesion.phone_number_id || null,
+        business_id: sesion.business_id || null
+      })
+    })
+      .then(function (r) { if (!r.ok) throw new Error("backend"); marcarPaso(3, "listo"); mostrar("v-final"); })
+      .catch(function () {
+        marcarPaso(3, "falla");
+        document.getElementById("corte-detalle").textContent =
+          "Su número quedó creado, pero no alcanzamos a terminar la configuración. " +
+          "Ya avisamos al equipo de MCI; no es necesario que haga nada más.";
+        mostrar("v-corte");
+      });
+  }
+
+  // ---- 7. Abandono o error reportado ---------------------------------------
+  function cortar(datos) {
+    if (enviado) return;
+    document.getElementById("corte-detalle").textContent = (datos && datos.error_message)
+      ? datos.error_message
+      : "Cerró la ventana antes de terminar. Puede reintentarlo con la misma clave.";
+    mostrar("v-corte");
+
+    var payload = JSON.stringify({ t: clave, evento: "CANCEL", detalle: datos || {} });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/onboarding", new Blob([payload], { type: "application/json" }));
+    } else {
+      fetch("/api/onboarding", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: payload, keepalive: true }).catch(function () {});
+    }
+  }
+})();
+</script>
+</body>
+</html>
